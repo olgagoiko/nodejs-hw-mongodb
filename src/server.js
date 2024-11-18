@@ -4,9 +4,7 @@ import cors from 'cors';
 import { env } from './utils/env.js';
 import { getAllContacts, getContactById } from './services/contacts.js';
 
-const PORT = 3000;
-
-export const startServer = () => {
+export const setupServer = () => {
   const app = express();
 
   app.use(express.json());
@@ -36,9 +34,9 @@ export const startServer = () => {
     });
   });
 
-  app.get('/contacts/:contactId', async (req, res) => {
+  app.get('/contacts/:contactId', async (req, res, next) => {
     const { contactId } = req.params;
-    const contact = await getContactById();
+    const contact = await getContactById(contactId);
 
     if (!contact) {
       res.status(404).json({
@@ -49,7 +47,7 @@ export const startServer = () => {
 
     res.status(200).json({
       status: 200,
-      message: 'Successfully found contacts!',
+      message: `Successfully found contact with id ${contactId}!`,
       data: contact,
     });
   });
