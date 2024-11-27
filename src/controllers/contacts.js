@@ -4,7 +4,7 @@ import {
   updateContact,
   deleteContact,
 } from '../services/contacts.js';
-import { Contact } from '../db/models/contact.js';
+import { Contact } from '../db/models/contacts.js';
 
 export const getAllContacts = async () => {
   try {
