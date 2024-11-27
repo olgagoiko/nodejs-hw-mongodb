@@ -2,7 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import pino from 'pino';
 
-import 'dotenv/config';
+import dotenv from 'dotenv';
+dotenv.config();
+
 import { getAllContacts, getContactById } from './services/contacts.js';
 
 const app = express();
