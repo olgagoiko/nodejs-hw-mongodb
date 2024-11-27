@@ -4,7 +4,6 @@ import pino from 'pino';
 import errorHandler from './middlewares/errorHandler.js';
 import notFoundHandler from './middlewares/notFoundHandler.js';
 import contactsRouter from './routers/contacts.js';
-
 import dotenv from 'dotenv';
 dotenv.config();
 

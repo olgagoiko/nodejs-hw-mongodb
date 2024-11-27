@@ -5,15 +5,13 @@ export const createNewContact = async (data) => {
 };
 
 export const updateContact = async (contactId, updateData) => {
-  const updateContact = await Contact.findByIdUpdate(contactId, updateData, {
+  const updateContact = await Contact.findByIdAndUpdate(contactId, updateData, {
     new: true,
   });
   return updateContact;
 };
 
 export const deleteContact = async (contactId) => {
-  const contact = await Contact.findByIdDelete(contactId);
+  const contact = await Contact.findByIdAndDelete(contactId);
   return contact;
 };
-
-
