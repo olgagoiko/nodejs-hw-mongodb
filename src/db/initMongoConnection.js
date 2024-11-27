@@ -13,5 +13,3 @@ export const initMongoConnection = async () => {
     process.exit(1);
   }
 };
-
-// mongodb+srv://OlhaHoiko:<db_password>@hw1.4xupi.mongodb.net/?retryWrites=true&w=majority&appName=HW1
