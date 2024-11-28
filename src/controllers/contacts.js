@@ -44,8 +44,8 @@ export const createContactController = async (req, res, next) => {
       message: 'Successfully created a contact!',
       data: newContact,
     });
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 };
 
@@ -62,8 +62,8 @@ export const updateContactController = async (req, res, next) => {
       message: 'Successfully patched a contact!',
       data: updatedContact,
     });
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 };
 
