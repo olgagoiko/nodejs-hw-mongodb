@@ -5,14 +5,37 @@ import {
   deleteContact,
 } from '../services/contacts.js';
 import { Contact } from '../db/models/contacts.js';
+import { parsePaginationParams } from '../utils/parsePaginationParams.js';
+import { parseFilterParams } from '../utils/parseFilterParams.js';
+import { parseSortParams } from '../utils/parseSortParams.js';
 
 export const getAllContacts = async (req, res, next) => {
   try {
-    const contacts = await Contact.find();
+    const { page, perPage } = parsePaginationParams(req.query);
+    const filter = parseFilterParams(req.query);
+    const { sortBy, sortOrder } = parseSortParams(req.query);
+
+    const contacts = await Contact.find(filter)
+      .sort({ [sortBy]: sortOrder === 'asc' ? 1 : -1 })
+      .skip((page - 1) * perPage)
+      .limit(perPage);
+
+    const totalItems = await Contact.countDocuments(filter);
+    const totalPages = Math.ceil(totalItems / perPage);
+
+    const hasPreviousPage = page > 1;
+    const hasNextPage = page < totalPages;
+
     res.status(200).send({
       status: 200,
       message: 'Successfully found contacts!',
       data: contacts,
+      page,
+      perPage,
+      totalItems,
+      totalPages,
+      hasPreviousPage,
+      hasNextPage,
     });
   } catch (error) {
     next(error);
