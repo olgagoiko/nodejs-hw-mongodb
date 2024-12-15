@@ -1,7 +1,6 @@
 import express from 'express';
 import {
   getAllContacts,
-  getContactById,
   createContactController,
   updateContactController,
   deleteContactController,
