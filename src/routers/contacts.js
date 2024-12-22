@@ -2,7 +2,6 @@ import express from 'express';
 import {
   getAllContacts,
   createContactController,
-  updateContactController,
   deleteContactController,
   getContactByIdController,
 } from '../controllers/contacts.js';
@@ -33,7 +32,7 @@ router.patch(
   jsonParser,
   isValidId,
   validateBody(updateContactSchema),
-  ctrlWrapper(updateContactController),
+  ctrlWrapper(patchContactController),
 );
 router.delete('/:id', isValidId, ctrlWrapper(deleteContactController));
 
