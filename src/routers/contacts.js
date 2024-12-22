@@ -11,7 +11,7 @@ import { validateBody } from '../middlewares/validateBody.js';
 import { isValidId } from '../middlewares/isValidId.js';
 import { contactSchema, updateContactSchema } from '../validation/contacts.js';
 import authenticate from '../middlewares/authenticate.js';
-import upload from '../middlewaress/multer.js';
+import upload from '../middlewares/multer.js';
 
 const router = express.Router();
 const jsonParser = express.json();
