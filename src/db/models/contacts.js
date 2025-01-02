@@ -12,6 +12,7 @@ const contactSchema = new mongoose.Schema(
     },
     email: {
       type: String,
+      required: true,
     },
     isFavourite: {
       type: Boolean,
@@ -23,14 +24,14 @@ const contactSchema = new mongoose.Schema(
       default: 'personal',
       required: true,
     },
+    photo: {
+      type: String,
+      default: '',
+    },
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true,
-    },
-    photo: {
-      type: String,
-      default: '',
     },
   },
   {

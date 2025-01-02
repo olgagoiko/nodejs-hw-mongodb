@@ -10,7 +10,7 @@ import {
 import ctrlWrapper from '../utils/ctrlWrapper.js';
 import {
   resetPasswordSchema,
-  requestResetEmailSchema,
+  sendResetEmailSchema,
 } from '../validation/auth.js';
 import { validateBody } from '../middlewares/validateBody.js';
 
@@ -24,7 +24,7 @@ router.post('/logout', ctrlWrapper(logout));
 router.post(
   '/send-reset-email',
   jsonParser,
-  validateBody(requestResetEmailSchema),
+  validateBody(sendResetEmailSchema),
   ctrlWrapper(sendResetEmail),
 );
 router.post(
