@@ -32,7 +32,7 @@ export const registerUser = async (req, res, next) => {
     const user = await createUser({ name, email, password });
 
     res.status(201).json({
-      status: '201',
+      status: 201,
       message: 'Successfully registered a user!',
       data: {
         id: user._id,
@@ -45,7 +45,7 @@ export const registerUser = async (req, res, next) => {
   } catch (error) {
     if (error.status === 409) {
       res.status(409).json({
-        status: '409',
+        status: 409,
         message: error.message,
       });
     } else {
@@ -80,7 +80,7 @@ export const loginUser = async (req, res, next) => {
     }).save();
     res.cookie('refreshToken', refreshToken, { httpOnly: true });
     res.status(200).json({
-      status: '200',
+      status: 200,
       message: 'Successfully logged in an user!',
       data: { accessToken },
     });
@@ -122,7 +122,7 @@ export const refreshSession = async (req, res, next) => {
 
     res.cookie('refreshToken', newRefreshToken, { httpOnly: true });
     res.status(200).json({
-      status: '200',
+      status: 200,
       message: 'Successfully refreshed a session!',
       data: { accessToken },
     });
