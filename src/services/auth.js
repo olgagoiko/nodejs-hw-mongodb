@@ -1,4 +1,5 @@
 import bcrypt from 'bcrypt';
+import crypto from 'node:crypto';
 import jwt from 'jsonwebtoken';
 import createHttpError from 'http-errors';
 import { User } from '../db/models/user.js';

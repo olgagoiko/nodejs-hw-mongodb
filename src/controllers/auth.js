@@ -10,7 +10,7 @@ import {
   logoutUserSession,
   refreshSessionTokens,
 } from '../services/auth.js';
-import { loginOrRegister } from '../services/loginOrRegister.js';
+import { loginOrRegister } from '../services/auth.js';
 import { loginSchema, registerSchema } from '../validation/auth.js';
 import { Session } from '../db/models/session.js';
 import { createAccessToken, createRefreshToken } from '../services/token.js';

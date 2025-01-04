@@ -41,10 +41,10 @@ paths:
       $ref: '../swagger/paths/auth/send-reset-email.yaml'
   /auth/reset-password:
     post:
-      $ref: '../swagger/path/auth/reset-password.yaml'
+      $ref: '../swagger/paths/auth/reset-password.yaml'
   /auth/logout:
     post:
-      $ref: '../swagger/path/auth/logout.yaml'
+      $ref: '../swagger/paths/auth/logout.yaml'
 components:
   securitySchemes:
     bearerAuth:

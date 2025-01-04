@@ -15,10 +15,10 @@ requestBody:
         properties:
           name:
             type: string
-            example: 'John Doe'
+            example: 'Charlie Smith'
           email:
             type: string
-            example: 'johndoe@example.com'
+            example: 'charlie.smith@example.com'
           password:
             type: string
             example: 'securepassword'
@@ -27,7 +27,7 @@ responses:
     $ref: '../../components/responses/201.yaml'
   '400':
     $ref: '../../components/responses/400.yaml'
- '409':
+  '409':
     $ref: '../../components/responses/409.yaml'
   '500':
     $ref: '../../components/responses/500.yaml'

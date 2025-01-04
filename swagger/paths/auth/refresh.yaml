@@ -1,5 +1,5 @@
 tags:
-- Auth
+  - Auth
 summary: Refresh access token
 operationId: refreshToken
 description: Refresh the access token using a refresh token
@@ -9,7 +9,7 @@ requestBody:
       schema:
         type: object
         required:
-      - refreshToken
+          - refreshToken
       properties:
         refreshToken:
           type: string

@@ -9,7 +9,7 @@
     "start": "node src/index.js",
     "lint": "eslint src/**/*.js",
     "build": "npm run build-docs",
-    "build-docs": "redocly bundle --ext json -o docs/swagger.json",
+    "build-docs": "redocly bundle --output docs/swagger.json --ext json docs/openapi.yaml",
     "preview-docs": "redocly preview-docs"
   },
   "keywords": [],
