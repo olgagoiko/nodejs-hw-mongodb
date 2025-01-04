@@ -1,0 +1,25 @@
+tags:
+- Auth
+summary: Refresh access token
+operationId: refreshToken
+description: Refresh the access token using a refresh token
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+      - refreshToken
+      properties:
+        refreshToken:
+          type: string
+          example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.abc123def456ghi789jkl'
+responses:
+  '200':
+    $ref: '../../components/responses/200.yaml'
+  '400':
+    $ref: '../../components/responses/400.yaml'
+  '401':
+    $ref: '../../components/responses/401.yaml'
+  '500':
+    $ref: '../../components/responses/500.yaml'

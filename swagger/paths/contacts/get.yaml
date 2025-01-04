@@ -1,0 +1,36 @@
+tags:
+- Contacts
+summary: Get list of contacts
+operationId: getContacts
+description: Retrieve a list of contacts with optional query parameters for filtering
+security:
+- bearerAuth: []
+parameters:
+- in: query
+  name: page
+  schema:
+    type: integer
+  example: 1
+- in: query
+  name: perPage
+  schema:
+    type: integer
+    example: 10
+- in: query
+  name: sortBy
+  schema:
+    type: string
+    example: 'name'
+- in: query
+  name: sortOrder
+  schema:
+    type: string
+    enum: [ 'asc', 'desc' ]
+    example: 'asc'
+responses:
+  '200':
+    $ref: ../../components/responses/200.yaml
+  '401':
+    $ref: ../../components/responses/401.yaml
+  '500':
+    $ref: ../../components/responses/500.yaml
